@@ -1,50 +1,35 @@
-import { Button } from "@/components/ui/button";
+import heroBackground from "@/assets/minimal-tech-hero.jpg";
 
-type HeroContent = { title?: string; subtitle?: string; description?: string };
-const Hero = ({ content }: { content?: HeroContent }) => {
+const Hero = () => {
   return (
-    <div className="relative min-h-screen flex flex-col">
-      {/* Navigation Bar */}
-      <nav className="relative z-30 flex items-center justify-between p-8 lg:p-12">
-        {/* Logo */}
-        <div className="text-white font-light tracking-wide text-xl">
-       
-        </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-background/60"></div>
+      </div>
 
-        {/* CTA Button */}
-        <Button 
-          variant="outline" 
-          size="default"
-          className="rounded-full border-white/30 text-white/80 hover:border-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 font-light"
-        >
-          View Work
-        </Button>
-      </nav>
-
-      {/* Main Content */}
-      <div className="relative z-20 flex-1 flex items-end">
-        <div className="w-full pb-8 px-8 lg:pb-12 lg:px-12 mt-24">
-          {/* Tagline */}
-          <p className="text-white/60 text-sm font-light tracking-wide mb-6">
-            {content?.subtitle || "Crafting digital experiences that leave lasting impressions."}
+      {/* Content */}
+      <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto w-full animate-fade-in">
+        <div className="max-w-2xl">
+          <p className="text-xs md:text-sm text-foreground/60 mb-4 tracking-wide uppercase">
+            Technical Lead · AI Engineer · Cloud Architect
           </p>
-
-          {/* Main Headlines */}
-          <div className="mb-8">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-light leading-none text-white mb-2">
-              {content?.title || "Build the Future."}
-            </h1>
-          </div>
-
-          {/* Description Paragraph */}
-          <div className="lg:max-w-md">
-            <p className="text-white/70 font-light leading-relaxed">
-              {content?.description || "Where innovation meets artistry, I create immersive digital experiences that push boundaries. Every project is a journey from concept to reality, crafted with precision and passion."}
-            </p>
-          </div>
+          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-none text-foreground">
+            Joker Seven
+          </h1>
+          <p className="text-sm md:text-base text-foreground/70 leading-relaxed max-w-xl">
+            Cloud & AI Engineering Lead with 12+ years in full-stack architecture, scalable cloud infrastructure, and intelligent systems. Currently focused on generative AI and cloud-native architecture for real-world business systems.
+          </p>
         </div>
       </div>
-    </div>
+
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+    </section>
   );
 };
 
