@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joker-seven.github.io/sitemap.xml
